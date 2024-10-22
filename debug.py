@@ -15,9 +15,9 @@ mensagens = [
 ]
 modelo= ChatOpenAI(model='gpt-3.5-turbo-0125')
 parser = StrOutputParser()
-chain = modelo | parser   #criar uma corrente para exetar cada processo em sequencia
+chain = modelo | parser   #criar uma corrente para executar cada processo em sequencia
 
-# resposta = modelo.invoke(mensagens)       #Nós criamos uma corrente para nao ter que dar o INVOKE toda vez que for instanciar um novo objeto(etapa)
+# resposta = modelo.invoke(mensagens)       #Nós criamos uma corrente (chain) para nao ter que dar o INVOKE toda vez que for instanciar um novo objeto(etapa)
 # texto = parser.invoke(resposta)       
 
 template_mensagem = ChatPromptTemplate.from_messages([
